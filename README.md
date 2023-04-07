@@ -1,2 +1,1 @@
-"# NoteWit" 
-"# NoteWit develop branch" 
+"# NoteWit release branch" 
