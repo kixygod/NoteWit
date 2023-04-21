@@ -6,7 +6,7 @@
 git clone https://github.com/kixygod/NoteWit.git -b develop
 cd NoteWit
 pip install virtualenv
-virualenv env
+virtualenv env
 On windows: .\env\Scripts\activate
 pip install -r requirements.txt
 python .\manage.py runserver
