@@ -1,13 +1,5 @@
 # NoteWit
 
-## Requirements
-
-```
-pip install django
-pip install djangorestframework
-pip install virtualenv
-```
-
 ## How to start
 
 ```
