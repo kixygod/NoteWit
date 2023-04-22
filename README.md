@@ -3,7 +3,7 @@
 ## How to start Django server
 
 ```
-git clone https://github.com/kixygod/NoteWit.git -b front
+git clone https://github.com/kixygod/NoteWit.git -b develop
 cd NoteWit
 pip install virtualenv
 virtualenv env
