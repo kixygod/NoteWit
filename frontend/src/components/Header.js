@@ -2,9 +2,9 @@ import React from "react";
 
 const Header = () => {
   return (
-    <a href={`/`}>
-      <h1>NOTEWIT</h1>
-    </a>
+    <div className="app-header">
+      <h1>NoteWit</h1>
+    </div>
   );
 };
 
