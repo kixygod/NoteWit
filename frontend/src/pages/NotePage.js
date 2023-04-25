@@ -51,7 +51,7 @@ const NotePage = ({ match, history }) => {
   };
 
   let handleSubmit = () => {
-    if (noteId !== "new" && !note.body) {
+    if (noteId !== "new" && note.body === "") {
       deleteNote();
     } else if (noteId !== "new") {
       updateNote();
@@ -60,6 +60,11 @@ const NotePage = ({ match, history }) => {
     }
     history.push("/");
     window.location.reload();
+  };
+
+  let handleChange = (value) => {
+    setNote((note) => ({ ...note, body: value }));
+    console.log("Hangle Change:", note);
   };
 
   return (
@@ -80,9 +85,9 @@ const NotePage = ({ match, history }) => {
 
       <textarea
         onChange={(e) => {
-          setNote({ ...note, body: e.target.value });
+          handleChange(e.target.value);
         }}
-        defaultValue={note?.body}
+        value={note?.body}
       ></textarea>
     </div>
   );
