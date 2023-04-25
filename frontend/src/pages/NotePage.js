@@ -39,9 +39,20 @@ const NotePage = ({ match, history }) => {
     });
   };
 
+  let deleteNote = async () => {
+    fetch(`/api/notes/${noteId}/delete/`, {
+      method: "delete",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    history.push("/");
+    window.location.reload();
+  };
+
   let handleSubmit = () => {
     if (noteId !== "new" && !note.body) {
-      // deleteNote()
+      deleteNote();
     } else if (noteId !== "new") {
       updateNote();
     } else if (noteId === "new" && note !== null) {
@@ -61,7 +72,7 @@ const NotePage = ({ match, history }) => {
           <h4>{note?.title}</h4>
         </h3>
         {noteId !== "new" ? (
-          <button>Delete</button>
+          <button onClick={deleteNote}>Delete</button>
         ) : (
           <button onClick={handleSubmit}>Done</button>
         )}
