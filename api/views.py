@@ -25,7 +25,7 @@ def getRoutes(request):
         {
             'Endpoint': '/notes/create/',
             'method': 'POST',
-            'body': {'body': ""},
+            'body': {'body': "",'title': ""},
             'description': 'Creates new note with data sent in post request'
         },
         {
@@ -63,7 +63,7 @@ def createNote(request):
     data = request.data
     note = Note.objects.create(
         body=data['body'],
-        title='newNote'
+        title=data['title']
     )
     serializer = NoteSerializer(note, many=False)
     return Response(serializer.data)

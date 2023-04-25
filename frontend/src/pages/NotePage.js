@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { ReactComponent as ArrowLeft } from "../assets/arrow-left.svg";
 
 const NotePage = ({ match, history }) => {
@@ -57,6 +57,7 @@ const NotePage = ({ match, history }) => {
       updateNote();
     } else if (noteId === "new" && note !== null) {
       createNote();
+      titleChange();
     }
     history.push("/");
     window.location.reload();
@@ -64,7 +65,22 @@ const NotePage = ({ match, history }) => {
 
   let handleChange = (value) => {
     setNote((note) => ({ ...note, body: value }));
+    //console.log("Hangle Change:", note);
+  };
+
+  let titleChange = (value) => {
+    setNote((note) => ({ ...note, title: value }));
     console.log("Hangle Change:", note);
+  };
+
+  let handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Отменить создание новой строки
+    }
+  };
+
+  let handleWheel = (event) => {
+    event.preventDefault(); // Отменить прокрутку мышью
   };
 
   return (
@@ -74,7 +90,18 @@ const NotePage = ({ match, history }) => {
           <a onClick={handleSubmit} href="/">
             <ArrowLeft />
           </a>
-          <h4>{note?.title}</h4>
+          {/* <h4>{note?.title}</h4> */}
+          <h4>
+            <textarea
+              onWheel={handleWheel}
+              onKeyDown={handleKeyDown}
+              className="titlearea"
+              onChange={(e) => {
+                titleChange(e.target.value);
+              }}
+              value={note?.title}
+            ></textarea>
+          </h4>
         </h3>
         {noteId !== "new" ? (
           <button onClick={deleteNote}>Delete</button>
