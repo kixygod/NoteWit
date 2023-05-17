@@ -6,7 +6,7 @@ class User(models.Model):
     # body = models.TextField(null=True, blank=True)
     # updated = models.DateTimeField(auto_now=True)
     # created = models.DateTimeField(auto_now_add=True)
-    id = models.TextField(null=False, blank=False, primary_key=True)
+    id = models.AutoField(primary_key=True)
     username = models.TextField(null=False, blank=False)
     password = models.TextField(null=False, blank=False)
     email = models.TextField(null=False, blank=False)
