@@ -10,5 +10,5 @@ class User(models.Model):
     username = models.TextField(null=False, blank=False)
     password = models.TextField(null=False, blank=False)
     email = models.TextField(null=False, blank=False)
-    def __str__(self):
-        return self.body[0:50]
+    # def __str__(self):
+    #     return self.body[0:50]
