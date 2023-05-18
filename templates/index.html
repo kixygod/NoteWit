@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block title %}
+A NoteWit
+{% endblock title %}
+
+{% block body %}
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+
+    .carousel-caption {
+      display: flex;
+      justify-content: center;
+      flex-direction: column-reverse;
+    }
+
+    .heading {
+      padding-top: 0 !important;
+
+    }
+
+  }
+
+  .col-lg-4 {
+    text-align: center;
+  }
+
+  .carousel-caption {
+    /* background-color: none; */
+    color: white;
+    position: static;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+
+
+  }
+
+  .carousel-indicators li {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: white;
+  }
+
+  .heading {
+    width: 100%;
+    padding-top: 150px;
+  }
+</style>
+<!--First Block-->
+
+<div class="container my-4 px-0">
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
+      <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
+      <span class="visually-hidden">Next</span>
+    </a>
+  </div>
+
+  <!--Second Block Starts-->
+
+  <div class="row my-5">
+    <div class="col-lg-4">
+      <img src="https://image.freepik.com/free-vector/human-hand-holding-stopwatch_74855-15463.jpg" alt=""
+        class="bd-placeholder-img rounded-circle" width="140" height="140" aria-label="Placeholder: 140x140"
+        focusable="false">
+      <h2>Распределяй время</h2>
+      <p>С помощью нашей программы NoteWit вы можете контролировать почти всю свою работу и оставаться сосредоточенным
+        на выполнении, а не
+        на запоминании.</p>
+    </div>
+    <div class="col-lg-4">
+      <img
+        src="https://static.vecteezy.com/system/resources/previews/002/118/250/non_2x/set-work-priority-task-management-concept-vector.jpg"
+        alt="" class="bd-placeholder-img rounded-circle" width="140" height="140" aria-label="Placeholder: 140x140"
+        focusable="false">
+      <h2>Добивайся новых высот</h2>
+      <p>С помощью нашего приложения NoteWit вы можете расставить приоритеты в своей работе и сделать шаг вперед,
+        чтобы работать быстрее.</p>
+    </div>
+    <div class="col-lg-4">
+      <img
+        src="https://image.freepik.com/free-vector/cloud-storage-idea-online-computing-internet-database-backup-server-programming-equipment-limited-access-control-pass-privacy-settings-vector-isolated-concept-metaphor-illustration_335657-2206.jpg"
+        alt="" class="bd-placeholder-img rounded-circle" width="140" height="140" aria-label="Placeholder: 140x140"
+        focusable="false">
+      <h2>Безопасность</h2>
+      <p>Мы считаем, что конфиденциальность является серьезной проблемой, и конфиденциальность важна для всех нас, мы не будем продавать ваши данные.</p>
+    </div>
+  </div>
+
+  </main>
+  <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  </body>
+
+  </html>
+</div>
+
+{% endblock body %}
